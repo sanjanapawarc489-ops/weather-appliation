@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WeatherStack API Test</title>
+</head>
+<body style="background: #1e1e2e; color: white; font-family: Arial, sans-serif; padding: 20px;">
+    <h1>WeatherStack API Test</h1>
+    <button onclick="testApi()" style="padding: 10px 20px; background: #7c3aed; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Test New York Weather
+    </button>
+    <div id="result" style="margin-top: 20px;"></div>
+
+    <script>
+        async function testApi() {
+            const apiKey = 'b2cbadd8e27d068ed379b3c6650f94fa';
+            const query = 'New York';
+            const url = `https://api.weatherstack.com/current?access_key=${apiKey}&query=${encodeURIComponent(query)}&units=m&language=en`;
+            
+            console.log('Testing URL:', url);
+            
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                document.getElementById('result').innerHTML = '<pre style="background: #2d2d3a; padding: 15px; border-radius: 5px; white-space: pre-wrap; word-break: break-word;">' + JSON.stringify(data, null, 2) + '</pre>';
+                console.log('API Response:', data);
+            } catch (error) {
+                document.getElementById('result').innerHTML = '<p style="color: red;">Error: ' + error.message + '</p>';
+                console.error('API Error:', error);
+            }
+        }
+    </script>
+</body>
+</html>

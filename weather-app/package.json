@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://sanjanapawarc489-ops.github.io/weather-application",
+  "homepage": "https://sanjanapawarc489-ops.github.io/weather-appliation",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

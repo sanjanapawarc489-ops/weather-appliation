@@ -1,0 +1,5 @@
+{
+    "buildCommand": "cd weather-app && npm run build",
+    "outputDirectory": "weather-app/dist",
+    "framework": "vite"
+}
